@@ -34,7 +34,7 @@ echo strtoupper("hooray"); // Convierte a cadena a MAYUSCULAS
  }
 
 
- // Haro el mismo ejemplo pero dovolviendo varios valores en una matriz
+ // el mismo ejemplo pero dovolviendo varios valores en una matriz
 
  $names = fix_names2("WILLIAM" , "henry" , "gasES");
  echo "<br>" . $names [0] ." ". $names[1] ." ". $names [2] ;
@@ -45,5 +45,23 @@ echo strtoupper("hooray"); // Convierte a cadena a MAYUSCULAS
 
     return array($n1 , $n2 , $n3); // En esta linea retornamos los nombres como una matriz unidimensional
  }
+
+
+ // Devolución en variables globales
+$a1 = "JUAN";
+$a2 = "camilo";
+$a3 = "CueNCa";
+
+echo $a1 . " " . $a2 . " " . $a3 . "<br>"; 
+fix_names3();
+echo $a1 . " " . $a2 . " " . $a3;
+
+function fix_names3(){
+
+   global $a1; $a1 = ucfirst(strtolower($a1));
+   global $a2; $a2 = ucfirst(strtolower($a2));
+   global $a3; $a3 = ucfirst(strtolower($a3));
+
+}
 
 ?>
